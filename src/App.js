@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { DataStore, Auth, API, graphqlOperation } from "aws-amplify";
+import { API } from "aws-amplify";
 import * as queries from "./graphql/queries";
 
 function App() {
