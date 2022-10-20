@@ -1,7 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { DataStore, Auth, API, graphqlOperation } from "aws-amplify";
+import * as queries from "./graphql/queries";
 
 function App() {
+  async function testAPI() {
+    try {
+      const allTodos = await API.graphql({ query: queries.listTodos });
+      console.log("allTodos", allTodos);
+    } catch (err) {
+      console.log("error checking data:", err);
+    }
+  }
+  testAPI();
+
   return (
     <div className="App">
       <header className="App-header">
